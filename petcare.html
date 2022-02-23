@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pet Care</title>
+    <script
+      src="https://kit.fontawesome.com/3898eabf63.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="icon"
+      href="//www.nykaaman.com/skin/frontend/nykaa/men/desktop/images/favicon.png"
+      type=""
+    />
+
+    <style>
+      body {
+        width: 100%;
+        text-align: center;
+        font-family: "Source Sans Pro", Roboto, Arial, sans-serif;
+        background-color: rgb(243, 243, 243);
+        font-size: 14px;
+        line-height: 1;
+      }
+
+      #container {
+        display: flex;
+        width: 88%;
+        margin: auto;
+        gap: 20px;
+      }
+      #sidebar {
+        flex: 3;
+        height: 650px;
+        background: #ffffff;
+        position: sticky;
+        top: 0;
+      }
+
+      #sidebar > div {
+        width: 100%;
+        height: 40px;
+        box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+          rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+        border-radius: 4px;
+        margin: auto;
+      }
+      .filter {
+        cursor: pointer;
+        box-sizing: border-box;
+        padding: 0 15px 0 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      #products_div {
+        flex: 9;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        padding: 15px;
+        padding-top: 0;
+      }
+      #card {
+        background: #ffffff;
+        text-align: center;
+        height: 380px;
+        box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+          rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+      }
+
+      #cartdiv {
+        display: flex;
+        height: 60px;
+        display: none;
+      }
+      #card:hover #cartdiv {
+        display: block;
+      }
+
+      #heart {
+        flex: 3;
+        font-size: 22px;
+        padding-top: 3px;
+        border: 0;
+      }
+      #cartbtn {
+        flex: 7;
+        border: 0;
+        margin-left: 15px;
+        font-size: 17px;
+        border-radius: 2px;
+        background-color: blue;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Pet Care(948)</h1>
+    </div>
+    <div id="banner_div">
+      <img
+        id="banner"
+        src="https://images-static.nykaa.com/uploads/01bf8615-d342-46d5-91dc-e729ee12a592.jpg?tr=w-1200,cm-pad_resize"
+        alt="test"
+        loading="eager"
+        srcset="
+          https://images-static.nykaa.com/uploads/01bf8615-d342-46d5-91dc-e729ee12a592.jpg?tr=w-2400,cm-pad_resize 2x
+        "
+      />
+    </div>
+    <div>
+      <h1>All Products</h1>
+    </div>
+    <div id="container">
+      <div id="sidebar">
+        <div class="filter">
+          <div>
+            <span>Sort By : Popularity</span>
+          </div>
+          <div>
+            <i class="fas fa-angle-down" style="font-size: 20px"></i>
+          </div>
+        </div>
+        <div class="filter">
+          <div>
+            <span>Category</span>
+          </div>
+          <div>
+            <i class="fas fa-angle-down" style="font-size: 20px"></i>
+          </div>
+        </div>
+        <div class="filter">
+          <div>
+            <span>Brand</span>
+          </div>
+          <div>
+            <i class="fas fa-angle-down" style="font-size: 20px"></i>
+          </div>
+        </div>
+        <div class="filter">
+          <div>
+            <span>Price</span>
+          </div>
+          <div>
+            <i class="fas fa-angle-down" style="font-size: 20px"></i>
+          </div>
+        </div>
+        <div class="filter">
+          <div>
+            <span>Discount</span>
+          </div>
+          <div>
+            <i class="fas fa-angle-down" style="font-size: 20px"></i>
+          </div>
+        </div>
+        <div class="filter">
+          <div>
+            <span>Avg Customer Rating </span>
+          </div>
+          <div>
+            <i class="fas fa-angle-down" style="font-size: 20px"></i>
+          </div>
+        </div>
+        <div class="filter">
+          <div>
+            <span>Preference</span>
+          </div>
+          <div>
+            <i class="fas fa-angle-down" style="font-size: 20px"></i>
+          </div>
+        </div>
+        <div class="filter">
+          <div>
+            <span>Pet Life Stage</span>
+          </div>
+          <div>
+            <i class="fas fa-angle-down" style="font-size: 20px"></i>
+          </div>
+        </div>
+        <div class="filter">
+          <div>
+            <span>Breed Size</span>
+          </div>
+          <div>
+            <i class="fas fa-angle-down" style="font-size: 20px"></i>
+          </div>
+        </div>
+        <div class="filter">
+          <div>
+            <span>Shop By Pet</span>
+          </div>
+          <div>
+            <i class="fas fa-angle-down" style="font-size: 20px"></i>
+          </div>
+        </div>
+        <div class="filter">
+          <div>
+            <span>Formulation</span>
+          </div>
+          <div>
+            <i class="fas fa-angle-down" style="font-size: 20px"></i>
+          </div>
+        </div>
+        <div class="filter">
+          <div>
+            <span>Flavor</span>
+          </div>
+          <div>
+            <i class="fas fa-angle-down" style="font-size: 20px"></i>
+          </div>
+        </div>
+        <div class="filter">
+          <div>
+            <span>Health Benefits</span>
+          </div>
+          <div>
+            <i class="fas fa-angle-down" style="font-size: 20px"></i>
+          </div>
+        </div>
+        <div class="filter">
+          <div>
+            <span>Pack Size</span>
+          </div>
+          <div>
+            <i class="fas fa-angle-down" style="font-size: 20px"></i>
+          </div>
+        </div>
+        <div class="filter">
+          <div>
+            <span>Ingredient </span>
+          </div>
+          <div>
+            <i class="fas fa-angle-down" style="font-size: 20px"></i>
+          </div>
+        </div>
+        <div class="filter">
+          <div>
+            <span>Conscious</span>
+          </div>
+          <div>
+            <i class="fas fa-angle-down" style="font-size: 20px"></i>
+          </div>
+        </div>
+      </div>
+
+      <div id="products_div"></div>
+    </div>
+  </body>
+</html>
+<script>
+  var data = [
+    {
+      img_url:
+        "https://images-static.nykaa.com/media/catalog/product/tr:w-200,h-200,cm-pad_resize/e/5/e52b28bamori00000006pa_1.jpg",
+      title: "Amorite Waterproof Reusable Washable Pet Training Pads - Mar...",
+      striked_price: "299",
+      price: "₹238",
+      off: "20% Off",
+    },
+    {
+      img_url:
+        "https://images-static.nykaa.com/media/catalog/product/tr:w-200,h-200,cm-pad_resize/e/5/e52b28bamori00000006pa_1.jpg",
+      title: "Amorite Waterproof Reusable Washable Pet Training Pads - Mar...",
+      striked_price: "299",
+      price: "₹238",
+      off: "20% Off",
+    },
+    {
+      img_url:
+        "https://images-static.nykaa.com/media/catalog/product/tr:w-200,h-200,cm-pad_resize/e/5/e52b28bamori00000006pa_1.jpg",
+      title: "Amorite Waterproof Reusable Washable Pet Training Pads - Mar...",
+      striked_price: "299",
+      price: "₹238",
+      off: "20% Off",
+    },
+    {
+      img_url:
+        "https://images-static.nykaa.com/media/catalog/product/tr:w-200,h-200,cm-pad_resize/e/5/e52b28bamori00000006pa_1.jpg",
+      title: "Amorite Waterproof Reusable Washable Pet Training Pads - Mar...",
+      striked_price: "299",
+      price: "₹238",
+      off: "20% Off",
+    },
+    {
+      img_url:
+        "https://images-static.nykaa.com/media/catalog/product/tr:w-200,h-200,cm-pad_resize/e/5/e52b28bamori00000006pa_1.jpg",
+      title: "Amorite Waterproof Reusable Washable Pet Training Pads - Mar...",
+      striked_price: "299",
+      price: "₹238",
+      off: "20% Off",
+    },
+    {
+      img_url:
+        "https://images-static.nykaa.com/media/catalog/product/tr:w-200,h-200,cm-pad_resize/e/5/e52b28bamori00000006pa_1.jpg",
+      title: "Amorite Waterproof Reusable Washable Pet Training Pads - Mar...",
+      striked_price: "299",
+      price: "₹238",
+      off: "20% Off",
+    },
+    {
+      img_url:
+        "https://images-static.nykaa.com/media/catalog/product/tr:w-200,h-200,cm-pad_resize/e/5/e52b28bamori00000006pa_1.jpg",
+      title: "Amorite Waterproof Reusable Washable Pet Training Pads - Mar...",
+      striked_price: "299",
+      price: "₹238",
+      off: "20% Off",
+    },
+    {
+      img_url:
+        "https://images-static.nykaa.com/media/catalog/product/tr:w-200,h-200,cm-pad_resize/e/5/e52b28bamori00000006pa_1.jpg",
+      title: "Amorite Waterproof Reusable Washable Pet Training Pads - Mar...",
+      striked_price: "299",
+      price: "₹238",
+      off: "20% Off",
+    },
+    {
+      img_url:
+        "https://images-static.nykaa.com/media/catalog/product/tr:w-200,h-200,cm-pad_resize/e/5/e52b28bamori00000006pa_1.jpg",
+      title: "Amorite Waterproof Reusable Washable Pet Training Pads - Mar...",
+      striked_price: "299",
+      price: "₹238",
+      off: "20% Off",
+    },
+    {
+      img_url:
+        "https://images-static.nykaa.com/media/catalog/product/tr:w-200,h-200,cm-pad_resize/e/5/e52b28bamori00000006pa_1.jpg",
+      title: "Amorite Waterproof Reusable Washable Pet Training Pads - Mar...",
+      striked_price: "299",
+      price: "₹238",
+      off: "20% Off",
+    },
+    {
+      img_url:
+        "https://images-static.nykaa.com/media/catalog/product/tr:w-200,h-200,cm-pad_resize/e/5/e52b28bamori00000006pa_1.jpg",
+      title: "Amorite Waterproof Reusable Washable Pet Training Pads - Mar...",
+      striked_price: "299",
+      price: "₹238",
+      off: "20% Off",
+    },
+    {
+      img_url:
+        "https://images-static.nykaa.com/media/catalog/product/tr:w-200,h-200,cm-pad_resize/e/5/e52b28bamori00000006pa_1.jpg",
+      title: "Amorite Waterproof Reusable Washable Pet Training Pads - Mar...",
+      striked_price: "299",
+      price: "₹238",
+      off: "20% Off",
+    },
+    {
+      img_url:
+        "https://images-static.nykaa.com/media/catalog/product/tr:w-200,h-200,cm-pad_resize/e/5/e52b28bamori00000006pa_1.jpg",
+      title: "Amorite Waterproof Reusable Washable Pet Training Pads - Mar...",
+      striked_price: "299",
+      price: "₹238",
+      off: "20% Off",
+    },
+    {
+      img_url:
+        "https://images-static.nykaa.com/media/catalog/product/tr:w-200,h-200,cm-pad_resize/e/5/e52b28bamori00000006pa_1.jpg",
+      title: "Amorite Waterproof Reusable Washable Pet Training Pads - Mar...",
+      striked_price: "299",
+      price: "₹238",
+      off: "20% Off",
+    },
+    {
+      img_url:
+        "https://images-static.nykaa.com/media/catalog/product/tr:w-200,h-200,cm-pad_resize/e/5/e52b28bamori00000006pa_1.jpg",
+      title: "Amorite Waterproof Reusable Washable Pet Training Pads - Mar...",
+      striked_price: "299",
+      price: "₹238",
+      off: "20% Off",
+    },
+    {
+      img_url:
+        "https://images-static.nykaa.com/media/catalog/product/tr:w-200,h-200,cm-pad_resize/e/5/e52b28bamori00000006pa_1.jpg",
+      title: "Amorite Waterproof Reusable Washable Pet Training Pads - Mar...",
+      striked_price: "299",
+      price: "₹238",
+      off: "20% Off",
+    },
+    {
+      img_url:
+        "https://images-static.nykaa.com/media/catalog/product/tr:w-200,h-200,cm-pad_resize/e/5/e52b28bamori00000006pa_1.jpg",
+      title: "Amorite Waterproof Reusable Washable Pet Training Pads - Mar...",
+      striked_price: "299",
+      price: "₹238",
+      off: "20% Off",
+    },
+  ];
+  console.log(data);
+  data.forEach((ele) => {
+    let products_div = document.getElementById("products_div");
+    let { img_url, title, striked_price, price, off } = ele;
+    let card = document.createElement("div");
+    card.id = "card";
+
+    let img = document.createElement("img");
+    img.src = img_url;
+
+    let p = document.createElement("p");
+    p.style.width = "80%";
+    p.style.margin = "auto";
+    p.innerHTML = title;
+
+    let price_div = document.createElement("div");
+    price_div.innerHTML = `<span style="color:grey">MRP:</span><span style="text-decoration:line-through;color:grey">${striked_price}</span> <span style="font-weight:bolder">${price}</span>     <span>${off}</span>`;
+    price_div.style = "margin-top:30px";
+    price_div.style = "margin-bottom:30px";
+
+    let br = document.createElement("br");
+    let star = document.createElement("span");
+    star.innerHTML = "★★★★★";
+    let addToCartDiv = document.createElement("div");
+    addToCartDiv.id = "cartdiv";
+
+    let heart = document.createElement("button");
+    heart.id = "heart";
+    heart.innerHTML = "♡";
+
+    let button = document.createElement("button");
+    button.id = "cartbtn";
+    button.innerHTML = "Add To Bag";
+
+    addToCartDiv.append(heart, button);
+
+    card.append(img, p, br, price_div, star, addToCartDiv);
+    products_div.append(card);
+  });
+</script>
