@@ -42,8 +42,9 @@
       #sidebar > div {
         width: 100%;
         height: 40px;
-        box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
-          rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+        
+        box-shadow: rgba(9, 30, 66, 0.25) 0px 0px 2px -2px,
+          rgba(9, 30, 66, 0.05) 0px 0px 0px 1px;
         border-radius: 4px;
         margin: auto;
       }
@@ -66,33 +67,36 @@
       #card {
         background: #ffffff;
         text-align: center;
-        height: 380px;
-        box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
-          rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+        height: 385px;
+        box-shadow: rgba(9, 30, 66, 0.25) 0px 0px 2px -2px,
+          rgba(9, 30, 66, 0.06) 0px 0px 0px 1px;
+        position: relative;  
       }
 
       #cartdiv {
         display: flex;
         height: 60px;
         display: none;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
       }
       #card:hover #cartdiv {
-        display: block;
-      }
-
+       display: flex; 
+      } 
+      
       #heart {
         flex: 3;
-        font-size: 22px;
-        padding-top: 3px;
+        font-size: 35px;
         border: 0;
       }
       #cartbtn {
         flex: 7;
-        border: 0;
-        margin-left: 15px;
+        border: 0;      
         font-size: 17px;
         border-radius: 2px;
-        background-color: blue;
+        background-color:#003243;
         color: white;
       }
     </style>
@@ -396,6 +400,7 @@
     let { img_url, title, striked_price, price, off } = ele;
     let card = document.createElement("div");
     card.id = "card";
+    
 
     let img = document.createElement("img");
     img.src = img_url;
@@ -413,8 +418,10 @@
     let br = document.createElement("br");
     let star = document.createElement("span");
     star.innerHTML = "★★★★★";
+    star.style.fontSize="16px"
     let addToCartDiv = document.createElement("div");
     addToCartDiv.id = "cartdiv";
+    
 
     let heart = document.createElement("button");
     heart.id = "heart";
@@ -428,5 +435,12 @@
 
     card.append(img, p, br, price_div, star, addToCartDiv);
     products_div.append(card);
+
+    // card.addEventListener("mouseover",()=>{
+    //   addToCartDiv.style.display="block"
+
+    // })
+
+
   });
 </script>
