@@ -21,14 +21,15 @@ header {
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
 }
+
 .css-bxqdqd {
-    position: relative;
-    height: 162px;
+    position:relative;
+    height: 155px;
 }
 .css-1qef9x9 {
     background: #fff;
     position: fixed;
-    z-index: 10;
+    z-index: 100;
     box-shadow: 0 2px 3px 0 rgb(0 0 0 / 10%);
     width: 100%;
     left: 0;
@@ -173,10 +174,11 @@ header {
 
     .css-uhagyq {
         border-bottom: solid 1px #e6dede;
-        position:relative;
+        position:fixed;
         top: 40px;
         background-color: #fff;
         width: 100%;
+        z-index: 100;
        
     }
     .css-2o3va {
@@ -2527,5 +2529,6 @@ padding: 0 5px;
 }
 #lastblock{
   position: relative;
-  top:40px;
+  top:106px;
+  z-index:10;
 }      
